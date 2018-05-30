@@ -1,0 +1,41 @@
+<% include partials/header %>
+
+<div class="background mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="background-text">
+                <h1 class="display-3 font-weight-bold">Makan Terooos !!!</h1>
+                <h4 class="pb-4">Makan terus sampai kenyang, jangan sampai lapar...</h4> <br>
+                <a href="#daftar-menu" class="btn btn-primary p-3 font-weight-bold">EDIT DAFTAR MENU</a>
+                <a href="/food/new" class="btn btn-success p-3 font-weight-bold">TAMBAH MENU</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="daftar-menu">
+    <div class="row mb-5">
+        <h2 class="font-weight-bold section-title m-auto">DAFTAR MENU</h2>
+    </div>
+    <div class="row">
+        <% food.forEach(function(data){ %>
+            <div class="col-lg-3 col-md-6 mb-4 food">
+                <div class="img-thumbnail p-0 food-img">
+                    <img class="mb-3" src="<%= data.image %>">
+                    <div class="mx-3">
+                        <h4 class="resto-name "><%= data.name %></h4>
+                        <p class="text-success font-weight-bold">Rp <%= data.cost %></p>
+                        <p><%= data.description %></p>
+                    </div>
+                    <div class="mx-3 pb-3">
+                        <a href="/food/<%= data._id %>/update" class="btn btn-primary mr-1">Edit</a>
+                        <a href="/food/<%= data._id %>/remove" class="btn btn-outline-danger">Remove</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+        
+    </div>
+</div>
+
+<% include partials/footer %>
