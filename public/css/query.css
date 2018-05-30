@@ -26,7 +26,8 @@
     }
 
     .food:hover, .food:hover .food-img {
-        transform: scale(1.01);
+        -webkit-transform: scale(1.01);
+                transform: scale(1.01);
     }
 
     .section-title {

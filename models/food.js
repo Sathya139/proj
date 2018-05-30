@@ -7,4 +7,4 @@ var foodSchema = mongoose.Schema({
     cost: Number
 });
 
-module.exports = mongoose.model("resto", foodSchema);
+module.exports = mongoose.model("food", foodSchema);

@@ -4,9 +4,9 @@
     <div class="container">
         <div class="row">
             <div class="background-text">
-                <h1 class="display-3 font-weight-bold">Makan Terooos !!!</h1>
+                <h1 class="display-3 font-weight-bold">Sayangi Perut Anda</h1>
                 <h4 class="pb-4">Makan terus sampai kenyang, jangan sampai lapar...</h4> <br>
-                <a href="#daftar-menu" class="btn btn-primary p-3 font-weight-bold">EDIT DAFTAR MENU</a>
+                <a id="to-daftar-menu" href="#daftar-menu" class="btn btn-primary p-3 font-weight-bold">EDIT DAFTAR MENU</a>
                 <a href="/food/new" class="btn btn-success p-3 font-weight-bold">TAMBAH MENU</a>
             </div>
         </div>
@@ -34,8 +34,22 @@
                 </div>
             </div>
         <% }) %>
-        
     </div>
 </div>
+
+<script>
+    $("#to-daftar-menu").click(function() {
+        if(this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $("html, body").animate({
+            scrollTop: $(hash).offset().top
+            }, 1200, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
+</script>
 
 <% include partials/footer %>

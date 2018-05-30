@@ -49,7 +49,7 @@ app.post("/food/:id/update", function(req, res) {
         if(err) {
             console.log(err);
         }else {
-            res.redirect("/");
+            res.redirect("/#daftar-menu");
         }
     });
 });
