@@ -6,9 +6,9 @@ Demo : [https://demo-restoo.herokuapp.com](https://demo-restoo.herokuapp.com)
 - Install [NodeJS + NPM](https://nodejs.org/en/) <br>
 - Install [MongoDB](https://www.mongodb.com/) <br>
 - Clone or download this repository <br>
-`git clone https://github.com/riskimidiw/CRUD-NodeJS.git`
-- Change your directory to CRUD-NodeJS folder <br>
-`cd CRUD-NodeJS`
+`git clone https://github.com/riskimidiw/Restoo.git`
+- Change your working directory to Restoo directory<br>
+`cd Restoo`
 - Install <br>
 `npm install`
 - Start mongodb (Linux) <br>
