@@ -28,8 +28,10 @@
                         <p><%= data.description %></p>
                     </div>
                     <div class="mx-3 pb-3">
-                        <a href="/food/<%= data._id %>/update" class="btn btn-primary mr-1">Edit</a>
-                        <a href="/food/<%= data._id %>/remove" class="btn btn-outline-danger">Remove</a>
+                        <form action="/food/<%= data._id %>?_method=DELETE" method="POST">
+                            <a href="/food/<%= data._id %>/update" class="btn btn-primary mr-1">Edit</a>
+                            <button class="btn btn-outline-danger">Remove</button>
+                        </form>
                     </div>
                 </div>
             </div>
