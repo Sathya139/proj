@@ -1,11 +1,13 @@
-var express         = require("express"),
-    mongoose        = require("mongoose"),
-    bodyParser      = require("body-parser"),
-    methodOverride  = require("method-override"); 
-    Food            = require("./models/food"),
-    app             = express();
+var express          = require("express"),
+    expressSanitizer = require("express-sanitizer"),
+    mongoose         = require("mongoose"),
+    bodyParser       = require("body-parser"),
+    methodOverride   = require("method-override"); 
+    Food             = require("./models/food"),
+    app              = express();
     
 app.set("view engine", "ejs");
+app.use(expressSanitizer());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
@@ -29,7 +31,14 @@ app.get("/food/new", function (req, res) {
 });
 
 app.post("/food", function(req, res) {
-    Food.create(req.body.food, function(err, food) {
+    var food = {
+        'name'          : req.sanitize(req.body.food.name),
+        'description'   : req.sanitize(req.body.food.description),
+        'image'         : req.sanitize(req.body.food.image),
+        'cost'          : req.sanitize(req.body.food.cost)
+    }
+
+    Food.create(food, function(err, food) {
         if(err) {
             console.log(err);
         }
@@ -48,7 +57,14 @@ app.get("/food/:id/update", function(req, res) {
 });
 
 app.put("/food/:id", function(req, res) {
-    Food.findByIdAndUpdate(req.params.id, req.body.food, function(err, food) {
+    var food = {
+        'name'          : req.sanitize(req.body.food.name),
+        'description'   : req.sanitize(req.body.food.description),
+        'image'         : req.sanitize(req.body.food.image),
+        'cost'          : req.sanitize(req.body.food.cost)
+    }
+
+    Food.findByIdAndUpdate(req.params.id, food, function(err, food) {
         if(err) {
             console.log(err);
         }
