@@ -1,4 +1,4 @@
-# CRUD-NodeJS
+# Restoo
 Simple CRUD app using Node Js, Express, MongoDB, Mongoose. <br>
 Demo : [https://demo-restoo.herokuapp.com](https://demo-restoo.herokuapp.com)
 
