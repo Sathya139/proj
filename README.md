@@ -1,6 +1,5 @@
 # Restoo
 Simple CRUD app using Node Js, Express, MongoDB, Mongoose. <br>
-Demo : [https://demo-restoo.herokuapp.com](https://demo-restoo.herokuapp.com)
 
 ## Installation
 - Install [NodeJS + NPM](https://nodejs.org/en/) <br>
